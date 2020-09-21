@@ -11,8 +11,8 @@ public class BankAccount {
     private LocalDate openDate;
     public double balance;
 
-    public BankAccount(Long id, int accountNo, String accountHolder, BankAccountType accountType, double balance) {
-        this.id = id;
+    public BankAccount( Long id,int accountNo, String accountHolder, BankAccountType accountType, double balance) {
+        this.id =id;
         AccountNo = accountNo;
         this.accountHolder = accountHolder;
         this.accountType = accountType;

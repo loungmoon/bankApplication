@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class BankServiceImplement implements BankService {
 
-    Map<Long,BankAccount> bankAccountMap = new HashMap<>();
-    List<Transaction> transactionList = new ArrayList<>();
+   private Map<Long,BankAccount> bankAccountMap = new HashMap<>();
+   private List<Transaction> transactionList = new ArrayList<>();
 
     @Override
     public BankAccount findAccount(Long id) {
@@ -17,7 +17,7 @@ public class BankServiceImplement implements BankService {
 
     @Override
     public BankAccount createAccount(String accountHolder, BankAccountType accountType, double balance) {
-        Long id = transactionList.size()+1L;
+        Long id = bankAccountMap.size()+1L;
         int accountNo = (int)(Math.random()*100000000);
         BankAccount account = new BankAccount(id,accountNo,accountHolder,accountType,balance);
         Transaction depositTransation = new Transaction(balance,TransactionType.DEPOSIT,account.getId());
